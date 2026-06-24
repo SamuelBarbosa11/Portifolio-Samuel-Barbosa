@@ -1,5 +1,3 @@
-import ThemeProvider from "./contexts/ThemeContext";
-
 import Header from "./sections/Header";
 import Gojo from "./components/Gojo";
 import Main from "./sections/Main";
