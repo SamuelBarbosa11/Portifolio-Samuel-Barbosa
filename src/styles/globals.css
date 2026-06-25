@@ -14,8 +14,8 @@ body {
 }
 
 :root {
-	--background: #fbfbfd;
-	--contrast-background: #09090b;
+	--background: white;
+	--contrast-background: black;
 
 	--text-primary: #09090b;
 	--text-secondary: #303030;
@@ -49,7 +49,7 @@ body {
 }
 
 [data-theme="dark"] {
-	--background: #09090b;
+	--background: black;
 	--contrast-background: white;
 
 	--text-primary: #fbfbfd;
@@ -89,33 +89,6 @@ body {
 }
 
 /* ======================================= */
-
-.skill {
-	opacity: 0;
-	transform: translateY(20px);
-	filter: blur(8px);
-
-	padding: 0.5rem 1.25rem;
-	border: 2px solid var(--text-tertiary);
-	border-radius: 0.5rem;
-	transition: transform 0.3s ease;
-	cursor: default;
-
-	&:hover {
-		transform: translateY(-2px);
-	}
-}
-
-.skill-visible {
-	opacity: 1;
-	transform: translateY(0);
-	filter: blur(0);
-
-	transition:
-		opacity 600ms ease,
-		transform 600ms ease,
-		filter 600ms ease;
-}
 
 .split {
 	width: 100%;

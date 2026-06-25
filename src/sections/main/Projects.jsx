@@ -1,11 +1,13 @@
 import { useEffect, useState, useRef } from "react";
 
 import useReveal from "../../hooks/useReveal";
+import useProjects from "../../hooks/useProjects";
 import useMediaQuery from "../../hooks/useMediaQuery";
 
 import Text from "../../components/Text";
 import RevealWords from "../../components/RevealWords";
 import ProjectGallery from "../../components/ProjectsGallery";
+import LoaderDots from "../../components/LoaderDots";
 
 import { TiArrowSortedDown } from "react-icons/ti";
 import { TiArrowSortedUp } from "react-icons/ti";
@@ -22,6 +24,7 @@ export default function Projects() {
 		projectsRef.current = element;
 	};
 
+	const { projects, loading, error } = useProjects();
 	const [expanded, setExpanded] = useState(false);
 	const firstRender = useRef(true);
 
@@ -97,7 +100,11 @@ export default function Projects() {
 				)}
 			</div>
 
-			<ProjectGallery expanded={expanded} />
+			{loading || error ? (
+				<LoaderDots />
+			) : (
+				<ProjectGallery expanded={expanded} />
+			)}
 
 			{expanded && (
 				<div className="flex justify-between items-center">

@@ -4,7 +4,7 @@ import useSkills from "../../hooks/useSkills";
 import Text from "../../components/Text";
 import RevealWords from "../../components/RevealWords";
 import Skill from "../../components/Skill";
-import Impostor from "../../components/Gojo";
+import LoaderDots from "../../components/LoaderDots";
 
 export default function About() {
 	const { ref, visible } = useReveal();
@@ -74,18 +74,24 @@ export default function About() {
 					delay={600}
 				/>
 
-				<div className="flex flex-wrap gap-4">
-					{skills.map((skill, index) => (
-						<Skill
-							key={skill.id}
-							className={`skill ${visible ? "skill-visible" : ""}`}
-							style={{
-								transitionDelay: `${(index + 1) * 250}ms`,
-							}}
-						>
-							{skill.name}
-						</Skill>
-					))}
+				<div className="flex flex-wrap gap-x-4 gap-y-6">
+					{loading || error ? (
+						<LoaderDots />
+					) : (
+						skills.map((skill, index) => (
+							<div key={skill.id} className="bounce">
+								<Skill
+									key={skill.id}
+									className={visible ? "skill-visible" : ""}
+									style={{
+										animationDelay: `${(index + 1) * 250}ms`,
+									}}
+								>
+									{skill.name}
+								</Skill>
+							</div>
+						))
+					)}
 				</div>
 			</div>
 		</section>

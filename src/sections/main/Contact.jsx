@@ -50,16 +50,13 @@ export default function Contact({ className = "" }) {
 				</div>
 			</div>
 
-			<div className="flex justify-center my-4">
-				<RevealWords
-					text="Estou sempre aberto a discutir novos projetos, ideias criativas ou
-				oportunidades para fazer parte da sua visão."
-					variant="muted"
-					className="text-(--text-secondary)"
-					visible={visible}
-					delay={440}
-				/>
-			</div>
+			<Text
+				variant="muted"
+				className="text-(--text-secondary) text-center my-4"
+			>
+				Estou sempre aberto a discutir novos projetos, ideias criativas ou
+				oportunidades para fazer parte da sua visão.
+			</Text>
 
 			<Text
 				as="a"
