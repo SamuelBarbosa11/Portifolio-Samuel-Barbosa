@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { collection, query, orderBy, limit, getDocs } from "firebase/firestore";
-
-import { db } from "../services/firebase";
+import { getCollection } from "../utils/getCollection";
 
 export default function useProjects() {
 	const [projects, setProjects] = useState([]);
@@ -10,22 +8,10 @@ export default function useProjects() {
 	const [error, setError] = useState(null);
 
 	useEffect(() => {
-		async function loadProjects() {
+		async function load() {
 			try {
-				const q = query(
-					collection(db, "projects"),
-					orderBy("order", "asc"),
-					limit(20)
-				);
-
-				const snapshot = await getDocs(q);
-
-				const projectsData = snapshot.docs.map((doc) => ({
-					id: doc.id,
-					...doc.data(),
-				}));
-
-				setProjects(projectsData);
+				const data = await getCollection("projects", "order", 20);
+				setProjects(data);
 			} catch (error) {
 				console.error(error);
 				setError(error);
@@ -34,7 +20,7 @@ export default function useProjects() {
 			}
 		}
 
-		loadProjects();
+		load();
 	}, []);
 
 	return {

@@ -1,8 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { collection, query, orderBy, limit, getDocs } from "firebase/firestore";
-
-import { db } from "../services/firebase";
+import { getCollection } from "../utils/getCollection";
 
 export default function useSkills() {
 	const [skills, setSkills] = useState([]);
@@ -10,22 +8,10 @@ export default function useSkills() {
 	const [error, setError] = useState(null);
 
 	useEffect(() => {
-		async function loadSkills() {
+		async function load() {
 			try {
-				const q = query(
-					collection(db, "skills"),
-					orderBy("order", "asc"),
-					limit(20)
-				);
-
-				const snapshot = await getDocs(q);
-
-				const skillsData = snapshot.docs.map((doc) => ({
-					id: doc.id,
-					...doc.data(),
-				}));
-
-				setSkills(skillsData);
+				const data = await getCollection("skills", "order", 20);
+				setSkills(data);
 			} catch (error) {
 				console.error(error);
 				setError(error);
@@ -34,7 +20,7 @@ export default function useSkills() {
 			}
 		}
 
-		loadSkills();
+		load();
 	}, []);
 
 	return {
