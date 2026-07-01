@@ -5,7 +5,9 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "export": "node scripts/exportCollections.js",
+    "build": "npm run export && vite build",
+    "dev:full": "npm run export && vite",
     "lint": "eslint .",
     "preview": "vite preview"
   },

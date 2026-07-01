@@ -8,7 +8,7 @@ Construindo experiências digitais modernas, performáticas e centradas no usuá
 
 <br>
 
-[🌐 Portfólio](https://portifolio.samuelbabosa.vercel.app/) •
+[🌐 Portfólio](https://samuelbabosadev.vercel.app/) •
 [💼 LinkedIn](https://www.linkedin.com/in/samuel-miguel-barbosa/) •
 [📷 Instagram](https://www.instagram.com/_samuks11/) •
 [🐙 GitHub](https://github.com/SamuelBarbosa11)
@@ -34,11 +34,15 @@ O foco principal foi criar uma experiência visual moderna, responsiva e agradá
 * Tailwind CSS
 * JavaScript (ES6+)
 
-### Backend & Cloud
+### Backend & Infra
 
 * Firebase Firestore
+
 * Firebase Admin SDK
-* Static JSON Generation
+
+* Static Site Generation (SSG)
+
+* Vercel
 
 ### Ferramentas
 
@@ -130,13 +134,26 @@ npm install
 Execute:
 
 ```bash
-node scripts/exportCollections.js
-```
-```bash
-npm run dev
+npm run dev:full
 ```
 
-OBS: para o script exportCollections.js funcionar localmente, deve se criar `scripts/config/serviceAccount.local.json` contendo o json com chave privada do seu banco de dados do Firebase, localizada no console do Firebase em Settings > Service Accounts > SDK Admin Firebase.
+### Requisitos para desenvolvimento
+
+Para que o script de exportação funcione localmente, crie o arquivo:
+
+scripts/config/serviceAccount.local.json
+
+contendo a chave privada de uma Service Account do Firebase.
+
+Essa chave pode ser obtida em:
+
+Firebase Console
+
+→ Configurações do Projeto
+
+→ Service Accounts
+
+→ Generate New Private Key
 
 ## 📦 Arquitetura dos Dados
 
@@ -149,7 +166,7 @@ A aplicação React consome apenas esses arquivos, proporcionando:
 - menor tempo de carregamento;
 - cache eficiente pelo navegador;
 - redução drástica das leituras do Firestore;
-- maior segurança, sem expor o banco ao cliente;
+- isolamento da camada de dados do cliente;
 - preparação para distribuição por CDN.
 
 ## 👨‍💻 Autor
