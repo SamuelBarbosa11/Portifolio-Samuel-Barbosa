@@ -1,0 +1,122 @@
+[
+  {
+    "id": "6U14nxvk5EY3jerebxeS",
+    "name": "React",
+    "category": "front-end",
+    "createdAt": {
+      "_seconds": 1781311178,
+      "_nanoseconds": 156000000
+    },
+    "order": 1
+  },
+  {
+    "id": "UAKKxdT8AjEvZNiwaZZ4",
+    "name": "ReactNative",
+    "category": "front-end",
+    "createdAt": {
+      "_seconds": 1781557519,
+      "_nanoseconds": 777000000
+    },
+    "order": 2
+  },
+  {
+    "id": "535U41nD2Xhic9I6PvLi",
+    "name": "HTML",
+    "category": "front-end",
+    "createdAt": {
+      "_seconds": 1782694540,
+      "_nanoseconds": 863000000
+    },
+    "order": 3
+  },
+  {
+    "id": "3KlarmHj3v0drIrLAq7b",
+    "name": "CSS",
+    "category": "front-end",
+    "createdAt": {
+      "_seconds": 1782694544,
+      "_nanoseconds": 180000000
+    },
+    "order": 4
+  },
+  {
+    "id": "TssDTXXWPSVvKladDBog",
+    "name": "TailwindCSS",
+    "category": "front-end",
+    "createdAt": {
+      "_seconds": 1781557610,
+      "_nanoseconds": 816000000
+    },
+    "order": 5
+  },
+  {
+    "id": "H9S71fx7kQN5YdcgN3eu",
+    "name": "Node.js",
+    "category": "back-end",
+    "createdAt": {
+      "_seconds": 1781557619,
+      "_nanoseconds": 133000000
+    },
+    "order": 6
+  },
+  {
+    "id": "adV58lMlUq7tvxPVOaE3",
+    "name": "Next.js",
+    "category": "back-end",
+    "createdAt": {
+      "_seconds": 1781557594,
+      "_nanoseconds": 385000000
+    },
+    "order": 7
+  },
+  {
+    "id": "h1FjJP8arqjRhFynbIDL",
+    "name": "Vite.js",
+    "category": "front-end",
+    "createdAt": {
+      "_seconds": 1782694480,
+      "_nanoseconds": 37000000
+    },
+    "order": 8
+  },
+  {
+    "id": "yNovCwBPIVHOVd4uYSGN",
+    "name": "REST APIs",
+    "category": "back-end",
+    "createdAt": {
+      "_seconds": 1781557675,
+      "_nanoseconds": 313000000
+    },
+    "order": 9
+  },
+  {
+    "id": "onjtJBCk5hPjZLy5StPg",
+    "name": "NoSQL",
+    "category": "database",
+    "createdAt": {
+      "_seconds": 1781557624,
+      "_nanoseconds": 529000000
+    },
+    "order": 10
+  },
+  {
+    "id": "2ZCcMmYEidsR8bBXajtv",
+    "name": "Firebase",
+    "category": "database",
+    "createdAt": {
+      "_seconds": 1781557627,
+      "_nanoseconds": 985000000
+    },
+    "order": 11
+  },
+  {
+    "id": "BmwYsdrU2sR0Pu4SCgTK",
+    "name": "Git e GitHub",
+    "category": "tools",
+    "createdAt": {
+      "_seconds": 1782694421,
+      "_nanoseconds": 249000000
+    },
+    "order": 12
+  }
+]

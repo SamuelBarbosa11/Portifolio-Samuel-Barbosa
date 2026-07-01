@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { getCollection } from "../utils/getCollection";
+import { fetchCollection } from "../utils/fetchCollection";
 
 export default function useSkills() {
 	const [skills, setSkills] = useState([]);
@@ -10,7 +10,7 @@ export default function useSkills() {
 	useEffect(() => {
 		async function load() {
 			try {
-				const data = await getCollection("skills", "order", 20);
+				const data = await fetchCollection("skills");
 				setSkills(data);
 			} catch (error) {
 				console.error(error);

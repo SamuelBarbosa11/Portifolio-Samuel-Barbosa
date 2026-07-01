@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 
-import { getCollection } from "../utils/getCollection";
+import { fetchCollection } from "../utils/fetchCollection";
 
 export default function useProjects() {
 	const [projects, setProjects] = useState([]);
@@ -10,7 +10,7 @@ export default function useProjects() {
 	useEffect(() => {
 		async function load() {
 			try {
-				const data = await getCollection("projects", "order", 20);
+				const data = await fetchCollection("projects");
 				setProjects(data);
 			} catch (error) {
 				console.error(error);
