@@ -8,7 +8,7 @@ Construindo experiências digitais modernas, performáticas e centradas no usuá
 
 <br>
 
-[🌐 Portfólio](https://samuelbarbosa11.github.io/Portifolio-Samuel-Barbosa/) •
+[🌐 Portfólio](https://portifolio.samuelbabosa.vercel.app/) •
 [💼 LinkedIn](https://www.linkedin.com/in/samuel-miguel-barbosa/) •
 [📷 Instagram](https://www.instagram.com/_samuks11/) •
 [🐙 GitHub](https://github.com/SamuelBarbosa11)
@@ -21,7 +21,7 @@ Construindo experiências digitais modernas, performáticas e centradas no usuá
 
 Este portfólio foi desenvolvido para apresentar meus projetos, habilidades técnicas e trajetória como desenvolvedor Full-Stack.
 
-O foco principal foi criar uma experiência visual moderna, responsiva e agradável, utilizando animações suaves, tema claro/escuro e boas práticas de desenvolvimento frontend.
+O foco principal foi criar uma experiência visual moderna, responsiva e agradável, utilizando animações suaves, tema claro/escuro e boas práticas de desenvolvimento frontend e backend.
 
 ---
 
@@ -37,8 +37,8 @@ O foco principal foi criar uma experiência visual moderna, responsiva e agradá
 ### Backend & Cloud
 
 * Firebase Firestore
-* Firebase App Check
-* Firebase Hosting (durante desenvolvimento)
+* Firebase Admin SDK
+* Static JSON Generation
 
 ### Ferramentas
 
@@ -58,13 +58,17 @@ O foco principal foi criar uma experiência visual moderna, responsiva e agradá
 
 ✔️ Galeria de projetos responsiva
 
-✔️ Integração com Firebase
-
-✔️ Dados carregados dinamicamente
-
-✔️ Proteção com Firebase App Check
-
 ✔️ Layout adaptado para dispositivos móveis
+
+✔️ Dados estáticos gerados automaticamente
+
+✔️ Carregamento otimizado via JSON
+
+✔️ Cache nativo do navegador
+
+✔️ Baixíssimo consumo do Firestore
+
+✔️ Estrutura preparada para CDN
 
 ---
 
@@ -79,15 +83,26 @@ O foco principal foi criar uma experiência visual moderna, responsiva e agradá
 ## 📂 Estrutura do Projeto
 
 ```text
-src/
-├── assets/
-├── components/
-├── contexts/
-├── hooks/
-├── sections/
-├── services/
-├── styles/
-└── utils/
+.
+├── public/
+│   ├── projects.json
+│   └── skills.json
+│
+├── scripts/
+│   ├── config/
+│   ├── lib/
+│   └── exportCollections.js
+│
+├── src/
+│   ├── assets/
+│   ├── components/
+│   ├── contexts/
+│   ├── hooks/
+│   ├── sections/
+│   ├── styles/
+│   └── utils/
+│
+└── vite.config.js
 ```
 
 ---
@@ -115,28 +130,27 @@ npm install
 Execute:
 
 ```bash
+node scripts/exportCollections.js
+```
+```bash
 npm run dev
 ```
 
----
+OBS: para o script exportCollections.js funcionar localmente, deve se criar `scripts/config/serviceAccount.local.json` contendo o json com chave privada do seu banco de dados do Firebase, localizada no console do Firebase em Settings > Service Accounts > SDK Admin Firebase.
 
-## 🔐 Variáveis de Ambiente
+## 📦 Arquitetura dos Dados
 
-Crie um arquivo `.env`:
+O portfólio não realiza consultas diretas ao Firestore em produção.
 
-```env
-VITE_FIREBASE_API_KEY=
-VITE_FIREBASE_AUTH_DOMAIN=
-VITE_FIREBASE_PROJECT_ID=
-VITE_FIREBASE_STORAGE_BUCKET=
-VITE_FIREBASE_MESSAGING_SENDER_ID=
-VITE_FIREBASE_APP_ID=
-VITE_FIREBASE_MEASUREMENT_ID=
+Durante o processo de build, um script utiliza o Firebase Admin SDK para exportar automaticamente as coleções do banco para arquivos JSON estáticos (ex: `projects.json` e `skills.json`).
 
-VITE_RECAPTCHA_SITE_KEY=
-```
+A aplicação React consome apenas esses arquivos, proporcionando:
 
----
+- menor tempo de carregamento;
+- cache eficiente pelo navegador;
+- redução drástica das leituras do Firestore;
+- maior segurança, sem expor o banco ao cliente;
+- preparação para distribuição por CDN.
 
 ## 👨‍💻 Autor
 
