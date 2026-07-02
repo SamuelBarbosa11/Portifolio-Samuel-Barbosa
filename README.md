@@ -137,6 +137,12 @@ Execute:
 npm run dev:full
 ```
 
+Caso apenas esteja desenvolvendo a interface (React),
+não é necessário executar o exportCollections.js.
+
+Execute o script apenas quando alterar os dados do Firestore
+ou antes de gerar um build de produção.
+
 ### Requisitos para desenvolvimento
 
 Para que o script de exportação funcione localmente, crie o arquivo:
