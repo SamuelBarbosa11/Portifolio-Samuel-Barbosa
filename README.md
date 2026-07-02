@@ -8,7 +8,7 @@ Construindo experiências digitais modernas, performáticas e centradas no usuá
 
 <br>
 
-[🌐 Portfólio](https://samuelbabosadev.vercel.app/) •
+[🌐 Portfólio](https://samuelbarbosadev.vercel.app/) •
 [💼 LinkedIn](https://www.linkedin.com/in/samuel-miguel-barbosa/) •
 [📷 Instagram](https://www.instagram.com/_samuks11/) •
 [🐙 GitHub](https://github.com/SamuelBarbosa11)
